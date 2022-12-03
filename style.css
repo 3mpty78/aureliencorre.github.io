@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+}
+
+body {
+    /* background: linear-gradient(90deg,#22232a 0%, #353541 80%); */
+    background: linear-gradient(135deg, hsla(232, 11%, 15%, 1) 30%, hsla(0, 5%, 16%, 1) 100%);
+    min-height: 100vh;
+}
+
+/* Loader */
+
+.loaderContainer {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    width: 100%;
+    height: 100vh;
+    background: #131416;
+}
+.ring {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+}
+@keyframes ring {
+    0%{ transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #219ebc;}
+    50%{transform: rotate(180deg);
+        box-shadow: 1px 5px 2px rgba(182, 66, 46, 0.767);}
+    100%{   transform: rotate(360deg);
+            box-shadow: 1px 5px 2px #219ebc;}
+}
+.ring::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+span {
+    color: #f5f5fa;
+    font-size: 1vw;
+    filter: opacity(1);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 200px;
+    animation: loading 3s ease-in-out infinite;
+}
+@keyframes loading {
+    50%{filter: opacity(0);}
+}
+.fondu-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    z-index: 0;
+}
+
+/* Title design + PP */
+
+header {
+    display:flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+header h2 {
+    font-size: 10vw;
+    width: fit-content;
+}
+header h2.last {
+    color: #219ebc;
+    text-shadow: 10px 10px 20px #16161aa8;
+    margin-top: 5rem;
+    margin-left: -50rem;
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
+header h2.first {
+    color: #f5f5fa;
+    font-weight:lighter;
+    text-shadow: 10px 10px 20px #16161aa8;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    margin-left: -35%;
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
+
+header .imgContainer {
+    background: url(./assets/pp.jpg) no-repeat center/cover;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 50%;
+    margin-left: 65%;
+    position: absolute;
+    margin-top: 5rem;
+    border-bottom: 3px solid #219ebc;
+    box-shadow: 6px 6px 20px #16161aa8;
+    animation: kisuke 3s linear infinite both;
+}
+
+@keyframes kisuke {
+    0%{transform: rotate(5deg);}
+    50%{transform: rotate(-5deg);}
+    100%{transform: rotate(5deg);}
+}
+
+.border {
+    width: 0%;
+    margin-left: 50%;
+    height: 2px;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    transform: translateX(-50%);
+    border-top: 1px solid #219ebc;
+    box-shadow: 0 5px 20px #16161aa8;
+    z-index: -5;
+    transition: 2.5s ease-in-out;
+}
+
+/* Timeline design */
+
+.timelineContainer {
+    margin: 5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.timelineContainer #timeline {
+    width: 0.3vw;
+    min-height: 180vh;
+    background: #219ebc;
+    border-radius: 10px;
+}
+
+/* Design section 2014 */
+
+.timelineContainer .school,
+.timelineContainer .versailles,
+.timelineContainer .tarbes,
+.timelineContainer .maisalf,
+.timelineContainer .dev {
+    position: absolute;
+    color: #f5f5fa;
+    width: 30vw;
+    height: fit-content;
+    padding: 1.5rem;
+    font-size: 1.5vw;
+    font-weight: lighter;
+    text-shadow: 10px 10px 20px #16161aa8;
+}
+.timelineContainer h2 {
+    color: #219ebc;
+    padding-bottom: 1rem;
+}
+.school {
+    margin-left: 40%;
+    margin-top: 10%;
+    border-right: 2px solid #219ebc;
+}
+.school .tooLong {
+    font-size: 1.2vw;
+    padding-top: 0.5rem;
+}
+.school img {
+    width: 5vw;
+    position: absolute;
+    margin-left: 75%;
+    filter: invert(1) opacity(0.75);
+}
+
+/* 2016 */
+
+.versailles {
+    margin-right: 40%;
+    margin-top: 25%;
+    border-left: 2px solid #219ebc;
+}
+.versailles img {
+    width: 4vw;
+    position: absolute;
+    margin-left: 75%;
+    filter: invert(1) opacity(0.75);
+}
+
+/* 2018 */
+
+.tarbes {
+    margin-left: 40%;
+    margin-top: 40%;
+    border-right: 2px solid #219ebc;
+}
+.tarbes img {
+    width: 4vw;
+    position: absolute;
+    margin-left: 75%;
+    filter: invert(1) opacity(0.75);
+}
+
+/* 2019 */
+
+.maisalf {
+    margin-right: 40%;
+    margin-top: 55%;
+    border-left: 2px solid #219ebc;
+}
+.maisalf img {
+    width: 4vw;
+    position: absolute;
+    margin-left: 75%;
+    filter: invert(1) opacity(0.75);
+}
+
+/* 2022 */
+
+.dev {
+    margin-left: 40%;
+    margin-top: 70%;
+    border-right: 2px solid #219ebc;
+}
+.dev img {
+    width: 5vw;
+    position: absolute;
+    margin-left: 75%;
+    filter: invert(1) opacity(0.75);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(.5, 0, 0, 1);
+}
+
+/* Design realisations */
+
+.timelineContainer .realisations {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3);
+    grid-template-rows: repeat(2);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    color: #f5f5fa;
+    width: fit-content;
+    height: fit-content;
+    padding: 1.5rem;
+    font-size: 1.3vw;
+    font-weight: lighter;
+    text-shadow: 10px 10px 20px #16161aa8;
+    margin-top: 4%;
+    margin-bottom: 5rem;
+}
+.realisations h2 {
+    padding: 1.5rem;
+    font-size: 5vw;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+/* Design First Card */
+
+.realisations .firstCard {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 5rem 0;
+    grid-area: 2 / 1 / 3 / 2;
+    transition: 0.4s;
+}
+.realisations .firstCard .zenifineContainer {
+    background: url(./assets/zenifine.png) no-repeat left/cover;
+    border-radius: 25px;
+    width: 22.5vw;
+    height: 15vw;
+    transition: 0.4s ease-in-out;
+    box-shadow: 10px 10px 20px #16161aa8;
+}
+
+/* Design Second Card */
+
+.realisations .secondCard {
+    text-align: center;
+    padding: 1.5rem;
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 5rem 5rem;
+    transition: .4s;
+}
+.realisations .secondCard .weeatContainer {
+    background: url(./assets/weeat.png) no-repeat center/cover;
+    border-radius: 25px;
+    width: 22.5vw;
+    height: 15vw;
+    transition: 0.4s ease-in-out;
+    box-shadow: 10px 10px 20px #16161aa8;
+}
+
+/* Design Third Card */
+
+.realisations .thirdCard {
+    text-align: center;
+    padding: 1.5rem;
+    grid-area: 2 / 3 / 3 / 4;
+    margin: 5rem 0;
+    transition: .4s;
+}
+.realisations .thirdCard .gameContainer {
+    background: url(./assets/game.png) no-repeat center/cover;
+    border-radius: 25px;
+    width: 22.5vw;
+    height: 15vw;
+    filter: grayscale(0);
+}
+
+.realisations .firstCard h3, 
+.realisations .secondCard h3, 
+.realisations .thirdCard h3 {
+    margin: 1.5rem;
+    font-size: 1.5vw;
+}
+/* Hover effects & animations */
+
+.timelineContainer .school:hover,
+.timelineContainer .versailles:hover,
+.timelineContainer .tarbes:hover,
+.timelineContainer .maisalf:hover,
+.timelineContainer .dev:hover {
+    box-shadow: 0 -5px 20px 0 #f5f5fa1a;
+    border-radius: 25px;
+    transition: 0.4s ease;
+    transform: scale(1.1);
+    animation: shadowAround 2s linear infinite both;
+}
+@keyframes shadowAround {
+    0%{box-shadow: 0 -10px 20px 0 #f5f5fa1a;}
+    25%{box-shadow: 10px 0 20px 0 #f5f5fa1a;}
+    50%{box-shadow: 0 10px 20px 0 #f5f5fa1a;}
+    75%{box-shadow: -10px 0 20px 0 #f5f5fa1a;}
+    100%{box-shadow: 0 -10px 20px 0 #f5f5fa1a;}
+}
+.realisations .firstCard:hover,
+.realisations .secondCard:hover {
+    cursor: not-allowed;
+    transform: scale(1.05);
+    filter: grayscale(1);
+    box-shadow: 0 -5px 20px 0 #f5f5fa1a;
+    border-radius: 25px;
+    transition: 0.4s ease;
+    animation: shadowAround 2s linear infinite both;
+}
+.realisations .thirdCard:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px #16161aa8;
+    filter: blur(0) grayscale(0);
+    box-shadow: 0 -5px 20px 0 #f5f5fa1a;
+    border-radius: 25px;
+    animation: shadowAround 2s linear infinite both;
+}
+
+
+
+/* Mini timeline design */
+
+.timelineContainer .miniTimeline {
+    width: 0.3vw;
+    position: relative;
+    min-height: 15vh;
+    background: #219ebc;
+    border-radius: 10px;
+}
+
+/* Skills design */
+
+.timelineContainer .skills {
+    width: fit-content;
+    height:fit-content;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+.timelineContainer .title {
+    font-size: 4vw;
+    text-shadow: 10px 10px 20px #16161aa8;
+}
+.timelineContainer .skills .schema {
+    background: url(./assets/imageonline.png) no-repeat center/cover;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 5rem;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px #131416;
+}
+
+/* Design second mini timeline */
+
+.timelineContainer .miniTimeline2 {
+    width: 0.3vw;
+    position: relative;
+    min-height: 15vh;
+    background: #219ebc;
+    border-radius: 10px;
+}
+
+/* Design about section */
+
+.about {
+    color: #f5f5fa;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(2);
+    grid-template-rows: repeat(2);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+.about h2 {
+    grid-area: 1 / 1 / 2 / 3;
+    font-size: 4vw;
+    text-shadow: 10px 10px 20px #16161aa8;
+    margin: -3.5rem auto;
+}
+.about h2 span {
+    animation: none;
+    font-size: 4vw;
+    text-transform: lowercase;
+    color: #b6422ec4;
+}
+.about p {
+    grid-area: 2 / 1 / 3 / 2;
+    font-size: 1.2vw;
+    margin-top: 5rem;
+    text-align: center;
+    font-weight: lighter;
+}
+.about .pictureContainer {
+    grid-area: 2 / 2 / 3 / 3;
+    background: url(./assets/myself.jpg) no-repeat center/cover;
+    width: 20vw;
+    height: 30vw;
+    margin: auto 1.5rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    box-shadow: 10px 10px 20px #16161aa8;
+}
+
+/* Design footer */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #22232a8e;
+    box-shadow: 0px -5px 20px #f5f5fa1a;
+    height: fit-content;
+    padding: 2rem;
+    bottom: 0;
+}
+.piedpage {
+    width: 100%;
+    height: 1px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5rem;
+    border-top: 1px solid #b6422ec4;
+    animation: piedpage 4s linear infinite;
+}
+@keyframes piedpage {
+    0%{width: 100%;}
+    50%{width: 25%;}
+    100%{width: 100%;}
+}
+
+footer .footer {
+    text-align: center;
+    color: #f5f5fa;
+    width: 50%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: lighter;
+}
+footer h2 {
+    font-size: 3vw;
+    color: #f5f5fa;
+    position: absolute;
+    font-weight: lighter;
+    height: fit-content;
+}
+footer .footer .logo1, footer .footer .logo2, footer .footer .logo3 {
+    width: 80px;
+    padding: 1rem;
+    margin: 5rem 2rem 0 2rem;
+
+    filter: invert(1) opacity(0.75);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    border-radius: 50%;
+
+    animation: rotation 2s linear infinite both;
+}
+footer .footer img {
+    width: 2vw;
+}
+footer .footer .logo1:hover,
+footer .footer .logo2:hover,
+footer .footer .logo3:hover{
+    background-color: #219ebc;
+}
+@keyframes rotation {
+    0%{transform: rotate(15deg);}
+    50%{transform: rotate(-15deg);}
+    100%{transform: rotate(15deg);}
+}
